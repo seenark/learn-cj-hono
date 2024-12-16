@@ -1,0 +1,27 @@
+{
+  "name": "cj",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.31.0",
+    "@hono/node-server": "^1.13.7",
+    "@hono/zod-openapi": "^0.18.3",
+    "hono": "^4.6.14",
+    "hono-pino": "^0.7.0",
+    "pino": "^9.5.0",
+    "pino-pretty": "^13.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.12.0",
+    "@types/node": "^20.11.17",
+    "eslint": "^9.17.0",
+    "tsx": "^4.7.1"
+  },
+  "packageManager": "pnpm@8.15.5+sha1.a58c038faac410c947dbdb93eb30994037d0fce2"
+}
