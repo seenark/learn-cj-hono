@@ -1,22 +1,13 @@
+import type { env } from "@/env.ts";
+
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-interface Env { }
+type Env = env;
 
 declare global {
   namespace NodeJS {
-    interface ProcessEnv extends Env {
-      NODE_ENV: "development" | "production" | "test" | "uat";
-      PORT: string;
-      LOG_LEVEL:
-      | "fatal"
-      | "error"
-      | "warn"
-      | "info"
-      | "debug"
-      | "trace"
-      | "silent";
-    }
+    interface ProcessEnv extends Env {}
   }
 }
 
-export { };
+export {};
 export type IEnv = Env;

@@ -1,6 +1,7 @@
 import type { AppOpenAPI } from "./type.js";
 
 import packageJson from "../../package.json";
+import { apiReference } from "@scalar/hono-api-reference";
 
 export default function configureOpenAPI(app: AppOpenAPI) {
   app.doc("/doc", {
@@ -10,4 +11,14 @@ export default function configureOpenAPI(app: AppOpenAPI) {
       title: "Task API",
     },
   });
+
+  app.get(
+    "/reference",
+    apiReference({
+      theme: "deepSpace",
+      spec: {
+        url: "/doc",
+      },
+    }),
+  );
 }

@@ -3,14 +3,24 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "dotenvx": "dotenvx",
     "dev": "tsx watch src/index.ts",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "drizzle:studio": "dotenvx run -- drizzle-kit studio",
+    "drizzle:push": "dotenvx run -- drizzle-kit push",
+    "drizzle:migrate": "dotenvx run -- drizzle-kit migration",
+    "drizzle:gen": "dotenvx run -- drizzle-kit generate",
+    "test": "vitest"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.31.0",
     "@hono/node-server": "^1.13.7",
     "@hono/zod-openapi": "^0.18.3",
+    "@libsql/client": "^0.14.0",
+    "@scalar/hono-api-reference": "^0.5.165",
+    "drizzle-orm": "^0.38.2",
+    "drizzle-zod": "^0.6.0",
     "hono": "^4.6.14",
     "hono-pino": "^0.7.0",
     "pino": "^9.5.0",
@@ -20,8 +30,10 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.12.0",
     "@types/node": "^20.11.17",
+    "drizzle-kit": "^0.30.1",
     "eslint": "^9.17.0",
-    "tsx": "^4.7.1"
+    "tsx": "^4.19.2",
+    "vitest": "^2.1.8"
   },
   "packageManager": "pnpm@8.15.5+sha1.a58c038faac410c947dbdb93eb30994037d0fce2"
 }
